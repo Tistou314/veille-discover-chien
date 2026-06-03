@@ -73,12 +73,12 @@ MOTS_DISCOVER = {
 MOTS_CHIEN = [
     "chien", "chiot", "canin", "canine", "toutou", "chienne", "aboi",
     "berger", "labrador", "bouledogue", "golden", "husky", "beagle",
-    "chihuahua", "border collie", "malinois", "cocker", "carlin", "race",
-    "maitre", "laisse", "niche", "croquettes", "dressage", "education canine",
+    "chihuahua", "border collie", "malinois", "cocker", "carlin",
+    "croquettes", "dressage", "education canine",
 ]
 # Sujets transversaux chien+chat a conserver meme sans le mot "chien".
 MOTS_TRANSVERSAUX = ["canicule", "voiture", "refuge", "spa", "maltraitance",
-                     "abandon", "adoption", "animaux", "animal"]
+                     "abandon", "adoption"]
 
 # Mots trop frequents dans la niche : ignores SEULEMENT pour comparer deux sujets
 # entre eux (pas pour le filtrage thematique), sinon tout se ressemble.
@@ -186,11 +186,17 @@ def date_entree(e) -> dt.datetime | None:
     return None
 
 
+MOTS_CHAT = ["chat", "chats", "chaton", "chatons", "chatte", "chattes",
+             "felin", "feline", "felins", "matou", "matous"]
+
+
 def concerne_chien(titre: str, resume: str) -> bool:
     t = normalise(titre + " " + resume)
-    if any(m in t for m in MOTS_CHIEN):
+    if any(re.search(rf"\b{m}", t) for m in MOTS_CHIEN):
         return True
-    if any(m in t for m in MOTS_TRANSVERSAUX):
+    if any(re.search(rf"\b{m}", t) for m in MOTS_CHAT):
+        return False          # sujet chat (sans chien) -> exclu
+    if any(re.search(rf"\b{m}", t) for m in MOTS_TRANSVERSAUX):
         return True
     return False
 
