@@ -189,9 +189,14 @@ def date_entree(e) -> dt.datetime | None:
 MOTS_CHAT = ["chat", "chats", "chaton", "chatons", "chatte", "chattes",
              "felin", "feline", "felins", "matou", "matous"]
 
+MOTS_EXCLUS = ["robot", "horoscope", "astrologie", "signe chinois",
+               "sauce chien", "jeu video", "playstation", "nintendo"]
+
 
 def concerne_chien(titre: str, resume: str) -> bool:
     t = normalise(titre + " " + resume)
+    if any(re.search(rf"\b{m}", t) for m in MOTS_EXCLUS):
+        return False
     if any(re.search(rf"\b{m}", t) for m in MOTS_CHIEN):
         return True
     if any(re.search(rf"\b{m}", t) for m in MOTS_CHAT):
