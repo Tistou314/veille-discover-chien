@@ -1,0 +1,35 @@
+{
+  "_commentaire": "Sources niche chien pour la veille Discover. 'flux' rempli = URL verifiee (annuaire de flux ou flux thematique). 'flux' vide = le script auto-decouvre au runtime (balise <link rel=alternate> ou chemins /feed/, /rss...). 'priorite' 1-3 (3 = coeur Discover, fait divers emotionnel quotidien ; 2 = animaux generaliste avec du chien ; 1 = conseil/evergreen, source d'angles). 'actif' false = present mais non interroge. Ajoute/retire librement.",
+  "sources": [
+
+    { "nom": "Wamiz - Actu chien", "home": "https://wamiz.com/actu/chien", "flux": "", "priorite": 3, "actif": true },
+    { "nom": "Wamiz - Sauvetage", "home": "https://wamiz.com/actu/sauvetage", "flux": "", "priorite": 3, "actif": true },
+    { "nom": "Wamiz - Actualites francaises", "home": "https://wamiz.com/actu/actualites-francaises", "flux": "", "priorite": 3, "actif": true },
+    { "nom": "Woopets - Actu chien", "home": "https://www.woopets.fr/chien/actualites/", "flux": "", "priorite": 3, "actif": true },
+    { "nom": "Woopets - Accueil", "home": "https://www.woopets.fr/", "flux": "", "priorite": 3, "actif": true },
+    { "nom": "Le Mag du Chien (Ouest-France)", "home": "https://lemagduchien.ouest-france.fr/", "flux": "", "priorite": 3, "actif": true },
+    { "nom": "30 Millions d'Amis - Actualites", "home": "https://www.30millionsdamis.fr/actualites/", "flux": "", "priorite": 3, "actif": false },
+
+    { "nom": "Flipboard - Theme Chien (agregat)", "home": "https://flipboard.com/topic/fr-chien", "flux": "https://flipboard.com/topic/fr-chien.rss", "priorite": 2, "actif": true },
+    { "nom": "Flipboard - Theme Animaux (agregat)", "home": "https://flipboard.com/topic/fr-animaux", "flux": "https://flipboard.com/topic/fr-animaux.rss", "priorite": 2, "actif": true },
+    { "nom": "BFMTV - Animaux", "home": "https://www.bfmtv.com/animaux/", "flux": "https://www.bfmtv.com/rss/animaux/", "priorite": 2, "actif": true },
+    { "nom": "Peuple animal", "home": "https://www.peuple-animal.com/", "flux": "https://www.peuple-animal.com/feed/", "priorite": 2, "actif": true },
+    { "nom": "Savoir animal", "home": "https://savoir-animal.fr/", "flux": "https://savoir-animal.fr/feed/", "priorite": 2, "actif": true },
+    { "nom": "Maxi Mag - Animaux", "home": "https://www.maxi-mag.fr/maison-jardin/animaux-maison-jardin/", "flux": "https://www.maxi-mag.fr/maison-jardin/animaux-maison-jardin/feed", "priorite": 2, "actif": true },
+    { "nom": "Planete Animal", "home": "https://www.planeteanimal.com/", "flux": "", "priorite": 2, "actif": false },
+    { "nom": "Nouvel Obs - Animaux", "home": "https://www.nouvelobs.com/animaux/", "flux": "https://www.nouvelobs.com/animaux/rss.xml", "priorite": 2, "actif": false },
+
+    { "nom": "Guide du chien", "home": "https://www.guide-du-chien.com", "flux": "https://www.guide-du-chien.com/feed/", "priorite": 1, "actif": true },
+    { "nom": "Nature de chien", "home": "https://www.naturedechien.fr/blog/", "flux": "", "priorite": 1, "actif": true },
+    { "nom": "Toutou Pour Le Chien", "home": "https://www.toutoupourlechien.com/blog/", "flux": "", "priorite": 1, "actif": true },
+    { "nom": "SanteVet - Articles", "home": "https://www.santevet.com/articles", "flux": "", "priorite": 1, "actif": true },
+    { "nom": "Assur O'Poil - Magazine", "home": "https://www.assuropoil.fr/magazine/", "flux": "", "priorite": 1, "actif": true },
+    { "nom": "Chien.com", "home": "https://www.chien.com/", "flux": "", "priorite": 1, "actif": true },
+    { "nom": "Holidog Times (FR)", "home": "https://www.holidog.com/fr/times/", "flux": "", "priorite": 1, "actif": true },
+    { "nom": "Yummypets - Chien", "home": "https://www.yummypets.com/mag/categorie/chien", "flux": "", "priorite": 1, "actif": false },
+    { "nom": "Toutoutendance", "home": "https://toutoutendance.fr/", "flux": "", "priorite": 1, "actif": true },
+    { "nom": "Esprit Dog (YouTube)", "home": "https://www.youtube.com/@EspritDog", "flux": "https://www.youtube.com/feeds/videos.xml?channel_id=UCobF55anw_mb6LK3W35lAdw", "priorite": 1, "actif": false },
+
+    { "nom": "Le Mag du Chat (Ouest-France)", "home": "https://lemagduchat.ouest-france.fr/", "flux": "", "priorite": 1, "actif": false }
+  ]
+}

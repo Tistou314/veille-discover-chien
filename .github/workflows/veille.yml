@@ -1,0 +1,37 @@
+name: Veille Discover chien
+
+on:
+  schedule:
+    # 05:00 UTC ~ 07:00 a Paris en ete (CEST), 06:00 en hiver (CET).
+    # Les crons GitHub peuvent demarrer avec quelques minutes de retard, sans gravite.
+    - cron: '0 5 * * *'
+  workflow_dispatch:        # ajoute un bouton "Run workflow" pour lancer a la main
+
+permissions:
+  contents: write           # autorise le robot a recommiter l'historique et le digest
+
+jobs:
+  veille:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperer le depot
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer la dependance
+        run: pip install feedparser
+
+      - name: Generer le digest du jour
+        run: python veille_discover_chien.py --sortie docs
+
+      - name: Publier le digest et memoriser l'historique
+        run: |
+          git config user.name  "veille-bot"
+          git config user.email "veille-bot@users.noreply.github.com"
+          git add docs historique.json
+          git commit -m "Veille du $(date +%F)" || echo "Rien de neuf a publier"
+          git push
