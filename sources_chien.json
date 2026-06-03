@@ -30,6 +30,11 @@
     { "nom": "Toutoutendance", "home": "https://toutoutendance.fr/", "flux": "", "priorite": 1, "actif": true },
     { "nom": "Esprit Dog (YouTube)", "home": "https://www.youtube.com/@EspritDog", "flux": "https://www.youtube.com/feeds/videos.xml?channel_id=UCobF55anw_mb6LK3W35lAdw", "priorite": 1, "actif": false },
 
-    { "nom": "Le Mag du Chat (Ouest-France)", "home": "https://lemagduchat.ouest-france.fr/", "flux": "", "priorite": 1, "actif": false }
+    { "nom": "Le Mag du Chat (Ouest-France)", "home": "https://lemagduchat.ouest-france.fr/", "flux": "", "priorite": 1, "actif": false },
+
+    { "nom": "Google News - chien (48h)", "home": "https://news.google.com/search?q=chien", "flux": "https://news.google.com/rss/search?q=chien+when:2d&hl=fr&gl=FR&ceid=FR:fr", "priorite": 3, "actif": true },
+    { "nom": "Google News - refuge/adoption chien (5j)", "home": "https://news.google.com/search?q=chien+refuge", "flux": "https://news.google.com/rss/search?q=chien+refuge+when:5d&hl=fr&gl=FR&ceid=FR:fr", "priorite": 3, "actif": true },
+    { "nom": "Hector Kitchen - Mag", "home": "https://www.hectorkitchen.com/blog/", "flux": "", "priorite": 1, "actif": false },
+    { "nom": "Dogteur", "home": "https://www.dogteur.com/", "flux": "", "priorite": 1, "actif": false }
   ]
 }
